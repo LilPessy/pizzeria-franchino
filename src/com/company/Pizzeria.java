@@ -16,8 +16,7 @@ public class Pizzeria{
         try{
             out = new PrintWriter(new FileOutputStream(file, true));
         }catch(FileNotFoundException e){
-            System.out.println("Thread padre interrotto");
-            out.println("err");
+            System.out.println("il notaio ha scioperato e oggi non scrive il file di log");
         }
         out.println("\n\n" + "Apertura: " + date.getTime() + "\n");
         Scanner tastiera = new Scanner(System.in);
@@ -29,7 +28,6 @@ public class Pizzeria{
 
             switch (scelta){
                 case 0:
-
                     tastiera.nextLine();
                     System.out.print("Inserisci il cognome della famiglia: ");
                     String cognome = tastiera.nextLine();
@@ -40,14 +38,13 @@ public class Pizzeria{
                     for (int i = 0; i<nComponenti; i++){
                         System.out.print(" . ");
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(500);
                         }catch (InterruptedException e){
                             System.out.println("il pizzaiolo ha avuro un crauma tranico");
                         }
-
                     }
+                    System.out.println("\n");
                     Famiglia f = new Famiglia(cognome, nComponenti);
-
                     break;
                 case 1:
                     date = new GregorianCalendar();

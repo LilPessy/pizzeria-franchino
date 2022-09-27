@@ -41,8 +41,7 @@ public class Famiglia implements Runnable{
         try{
             out = new PrintWriter(new FileOutputStream(file, true));
         }catch(FileNotFoundException e){
-            System.out.println("errore");
-            out.println("err");
+            System.out.println("il notaio si è stancato di scrivere il file di log");
         }
 
         GregorianCalendar date = new GregorianCalendar();
@@ -52,8 +51,7 @@ public class Famiglia implements Runnable{
                 Thread.sleep(3000);
             }
         } catch (InterruptedException e) {
-            System.out.println("Thread figlio interrotto");
-            out.println("err");
+            System.out.println("La famiglia " + cognome + " ha fatto una rapina, la pizzeria è chiusa");
         }
         date = new GregorianCalendar();
         out.println("esce " + cognome + "(" + date.getTime() + ")");
